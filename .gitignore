@@ -20,5 +20,9 @@ doc/
 *.swp
 *-
 
+# Ignore Image Files
+*.JPG
+*.png
+
 .project
 .DS_Store
