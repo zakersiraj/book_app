@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'books/new'
+  #get 'books/new'
+  resources :books
 
   #get 'home_page/home'
   root to: 'home_page#home'
