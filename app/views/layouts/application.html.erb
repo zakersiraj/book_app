@@ -13,9 +13,7 @@
           <nav>
             <ul class="nav top-left">
               <li><%= link_to "Home", root_path %></li>
-              <li><%= link_to "Sign in", signin_path %></li>
-            </ul>
-            <% if signed_in? %> 
+            <% if signed_in? %>
               <li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
             <% else %>
               <li><%= link_to "Sign in", signin_path %></li>

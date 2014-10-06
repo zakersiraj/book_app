@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-
+  include SessionsHelper
+  
   def new
   end
 
@@ -7,6 +8,9 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       # redirect to the book show page
+      sign_in user
+      # but for now redirect to index page
+      redirect_to books_path
     else
       flash.now[:error] = "Invalid email/password combination"
       render 'new'
@@ -14,7 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-   # sign_out
+    sign_out
     redirect_to root_path
   end
 
