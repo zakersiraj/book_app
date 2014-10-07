@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       # sign_in @user
       flash.now[:success] = "Welcome..."
-      redirect_to books_path
+      render books_path
     else
       render 'new'
     end
